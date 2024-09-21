@@ -1,0 +1,473 @@
+@font-face {
+    font-family: 'HSSaemaul-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+/* 메인 페이지 */
+#mainPage {
+    display: block;
+
+}
+
+/* 세팅 페이지 */
+#settingPage {
+    display: none;
+}
+
+/* 정보 페이지 */
+#infoPage {
+    display: none;
+}
+
+.settingFont {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    font-size: 40px;
+    font-family: 'HSSaemaul-Regular', serif;
+}
+
+.출처Font {
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    font-size: 25px;
+    font-family: 'HSSaemaul-Regular', serif;
+}
+
+/* 새로고침 버튼 */
+div[class*=box] {
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+/* 
+========================
+      BUTTON ONE
+========================
+*/
+.btn-two {
+    color: #575757;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.btn-two span {
+    z-index: 2;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-two::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-two::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-two:hover::before {
+    transform: rotate(-45deg);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.btn-two:hover::after {
+    transform: rotate(45deg);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* 바이오닉 결과값 출력 */
+#styled-text {
+    width: 1500px;
+
+    font-size: 20px;
+    font-family: 'GmarketSansMedium', serif;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding: 30px;
+    overflow: visible;
+    outline: none;
+    box-sizing: border-box;
+    resize: none;
+    background-color: rgb(233, 233, 233);
+
+
+}
+
+/* 바이오닉 기능 */
+.highlight {
+    font-size: 30px;
+    color: rgb(143, 36, 36);
+    /* 크기를 조정할 스타일 */
+}
+
+/* popup클래스 안에 속한 title -> .popup>.title title은 클래스*/
+.popup {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 55px -25px rgb(0 0 0 / 100%);
+}
+
+.popup>.title {
+    border-radius: 15px 15px 0 0;
+    min-height: 40px;
+    color: #fff;
+    background-color: #333333;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.popup>.content {
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'GmarketSansMedium', serif;
+    font-size: 20px;
+}
+
+.popup>.cmd {
+    bottom: 0;
+    min-height: 40px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    border-radius: 0 0 15px 15px;
+    min-height: 40px;
+    text-align: right;
+}
+
+.popup>.cmd .button {
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+}
+
+.popup>.cmd .button:hover {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+/* 제작자 BUTTON */
+.pushme {
+    position: relative;
+    font-weight: 700;
+    background-color: #333333;
+    border-radius: 0.6em;
+    display: inline-block;
+    margin: 1em;
+}
+
+.pushme .inner {
+    display: inline-block;
+    background-color: #F6F3EB;
+    border-radius: 0.6em;
+    border: 0.3em solid #333333;
+    padding: 1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    user-select: none;
+    transform: translate3d(0.6em, -0.6em, 0);
+    transition: transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 220ms;
+    font-family: 'GmarketSansMedium', serif;
+    font-size: 12px;
+}
+
+.pushme:active .inner,
+.pushme.click .inner {
+    transform: translate3d(0, 0, 0);
+    transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1);
+    font-family: 'GmarketSansMedium', serif;
+    font-size: 12px;
+}
+
+
+.center {
+    position: absolute;
+    top: 30%;
+    left: 86%;
+    width: 80vw;
+    text-align: center;
+    transform: translate3d(-50%, -50%, 0);
+
+}
+
+.sig {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: GmarketSansMedium;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/*# sourceMappingURL=styles02.css.map */
+
+/* INPUT 박스 */
+textarea[type=text] {
+    width: 1500px;
+    height: 500px;
+    font-size: 20px;
+    font-family: 'GmarketSansMedium', serif;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding: 30px;
+    overflow: auto;
+    outline: none;
+    box-sizing: border-box;
+    resize: none;
+    background-color: rgb(233, 233, 233);
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* 화면 전체    높이를 사용 */
+}
+
+
+/*  type=text하면 폰트 변경 가능 */
+
+/* 그라디언트 언러라인이 들어간 텍스트 효과 */
+#title01 {
+    margin: 1em 2em;
+    font-family: 'HSSaemaul-Regular', serif;
+    font-size: 100px;
+    line-height: 1.4em;
+    font-weight: 700;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*     
+display: flex;
+justify-content: center;
+align-items: center;
+가운데 정렬
+*/
+
+/* Underline */
+.underline {
+    line-height: 0.5em;
+    /* Positive value. */
+    vertical-align: 0.5em;
+    /* Positive value. */
+    border-bottom: .4em solid transparent;
+    -moz-border-image: -moz-linear-gradient(left, #A8DBED 0%, #E291E6 100%);
+    -webkit-border-image: -webkit-linear-gradient(left, #A8DBED 0%, #E291E6 100%);
+    border-image: linear-gradient(to right, #A8DBED 0%, #E291E6 100%);
+    border-image-slice: 1;
+}
+
+.underline span {
+    vertical-align: -0.4em;
+}
+
+/* Highlight */
+*::selection {
+    background: rgba(226, 145, 230, .2);
+}
+
+
+/* label:active:after {
+    width: 20px;
+} */
+@-webkit-keyframes expand-right {
+    0% {
+        left: 2px;
+        /* background:white; */
+    }
+
+    30%,
+    50%
+
+    /* 50% 80% */
+        {
+        left: 2px;
+        width: 46px;
+
+    }
+
+    60% {
+        left: 34px;
+        width: 14px;
+    }
+
+    80% {
+        left: 24px;
+        width: 24px;
+    }
+
+    90% {
+        left: 29px;
+        width: 19px;
+    }
+
+    100% {
+        left: 27px;
+        width: 21px;
+    }
+}
+
+@keyframes expand-right {
+    0% {
+        left: 2px;
+        /* background:white; */
+    }
+
+    30%,
+    50%
+
+    /* 50% 80% */
+        {
+        left: 2px;
+        width: 46px;
+
+    }
+
+    60% {
+        left: 34px;
+        width: 14px;
+    }
+
+    80% {
+        left: 24px;
+        width: 24px;
+    }
+
+    90% {
+        left: 29px;
+        width: 19px;
+    }
+
+    100% {
+        left: 27px;
+        width: 21px;
+    }
+}
+
+@-webkit-keyframes expand-left {
+    0% {
+        left: 27px;
+        /* background:white; */
+    }
+
+    30%,
+    50% {
+        left: 2px;
+        width: 46px;
+    }
+
+    60% {
+        right: 34px;
+        width: 14px;
+    }
+
+    80% {
+        right: 24px;
+        width: 24px;
+    }
+
+    90% {
+        right: 29px;
+        width: 19px;
+    }
+
+    100% {
+        left: 2px;
+        width: 21px;
+    }
+}
+
+@keyframes expand-left {
+    0% {
+        left: 27px;
+        /* background:white; */
+    }
+
+    30%,
+    50% {
+        left: 2px;
+        width: 46px;
+    }
+
+    60% {
+        right: 34px;
+        width: 14px;
+    }
+
+    80% {
+        right: 24px;
+        width: 24px;
+    }
+
+    90% {
+        right: 29px;
+        width: 19px;
+    }
+
+    100% {
+        left: 2px;
+        width: 21px;
+    }
+}
